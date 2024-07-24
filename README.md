@@ -1,4 +1,4 @@
-# HOSPITAL MANAGEMENT SYSTEM
+# HOSPITAL MANAGEMENT SYSTEM🏥🩺🧑‍⚕️👩‍⚕️
 
 <img width="700" height="300" alt="image"  src="https://github.com/user-attachments/assets/3b430a11-4b42-477b-95d1-58ab5500b493"><br><br>
 
