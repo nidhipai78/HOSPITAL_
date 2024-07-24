@@ -1,0 +1,256 @@
+<?php include("connection.php"); ?>
+
+<?php
+
+    if($_POST['submit'])
+    {
+      $name = $_POST['name'];
+      $phone = $_POST['phone'];
+      $email = $_POST['email'];
+      $date = $_POST['date'];
+      $department = $_POST['department'];
+      $doctor = $_POST['doctor'];
+
+      $query = "insert into appointment values('$name','$phone','$email','$date','$department','$doctor');";
+      $data = mysqli_query($conn,$query);
+
+      if($data)
+      {
+        echo "YOUR APPOINTMENT IS BOOKED SUCCESSFULLY!!";
+      }
+      else
+      {
+        echo "YOUR APPOINTMENT FAILED";
+      }
+    }
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Booking Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        input[type="submit"],
+        select {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-top: 8px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .error {
+            color: red;
+            font-size: 0.9em;
+            margin-top: -10px;
+            margin-bottom: 10px;
+        }
+
+        .success {
+            color: green;
+            font-size: 0.9em;
+            margin-top: -10px;
+            margin-bottom: 10px;
+        }
+         .copyright {
+    color: black;
+    margin-left: 25px;
+    
+  }
+
+    </style>
+</head>
+<body style="background-color:rgb(163, 231, 240); ">
+
+<div class="container">
+    <h1>Book Appointment</h1>
+    <form id="appointmentForm" action="#" method="POST" >
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Your Name">
+        <div id="nameError" class="error"></div>
+
+        <label for="phno">Phone Number:</label>
+        <input type="text" id="phone" name="phone" placeholder="Your Phone Number">
+        <div id="phnoError" class="error"></div>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Your Email">
+        <div id="emailError" class="error"></div>
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date">
+       <!-- <div id="dateError" class="error"></div>-->
+
+        <label for="department">Department:</label>
+        <select id="department" name="department" onchange="populateDoctors(this.value)" required>
+            <option value="">Select Department</option>
+            <option value="Cardiology">Cardiology</option>
+            <option value="Orthopedics">Orthopedics</option>
+            <option value="Neurology">Neurology</option>
+        </select>
+        <!--<div id="departmentError" class="error"></div>-->
+
+        <label for="doctor">Doctor:</label>
+        <select id="doctor" name="doctor" required>
+            <option value="">Select Doctor</option>
+            <option value="Dr. John Smith">Dr. John Smith</option>
+            <option value="Dr. Sarah Johnson">Dr. Sarah Johnson</option>
+            <option value="Dr. Michael Williams">Dr. Michael Williams</option>
+            <option value="Dr. Emily Brown">Dr. Emily Brown</option>
+            <option value="Dr. David Jones">Dr. David Jones</option>
+            <option value="Dr. Jennifer Lee">Dr. Jennifer Lee</option>
+            
+        </select>
+        <div id="doctorError" class="error"></div>
+
+        <input type="submit" value="Book Now" name="submit" class="submit">
+        <div id="successMessage" class="success" style="display: none;">Appointment successfully booked!</div>
+    </form>
+</div>
+<footer>
+<span class="copyright">&copy; 2024 MedCare</span>
+</footer>
+
+<!--<script>
+    function populateDoctors(selectedDepartment) {
+        var doctorSelect = document.getElementById("doctor");
+        doctorSelect.innerHTML = ""; // Clear existing options
+        
+        if (selectedDepartment === "Cardiology") {
+            addOption(doctorSelect, "Dr. John Smith");
+            addOption(doctorSelect, "Dr. Sarah Johnson");
+        } else if (selectedDepartment === "Orthopedics") {
+            addOption(doctorSelect, "Dr. Michael Williams");
+            addOption(doctorSelect, "Dr. Emily Brown");
+        } else if (selectedDepartment === "Neurology") {
+            addOption(doctorSelect, "Dr. David Jones");
+            addOption(doctorSelect, "Dr. Jennifer Lee");
+        }
+    }
+
+    function addOption(selectElement, optionText) {
+        var option = document.createElement("option");
+        option.text = optionText;
+        selectElement.add(option);
+    }
+
+    // Form validation function
+    function validateForm() {
+        var department = document.getElementById("department").value;
+        var doctorSelect = document.getElementById("doctor");
+        var doctor = doctorSelect.value;
+
+        // Department selection validation
+        if (department === "") {
+            document.getElementById('departmentError').innerHTML = "Please select a department";
+            return false;
+        } else {
+            document.getElementById('departmentError').innerHTML = "";
+        }
+
+        // Doctor selection validation
+        if (doctor === "") {
+            document.getElementById('doctorError').innerHTML = "Please select a doctor";
+            return false;
+        } else {
+            document.getElementById('doctorError').innerHTML = "";
+        }
+ 
+        var name = document.getElementById('name').value;
+        var phno = document.getElementById('phone').value;
+        var email = document.getElementById('email').value;
+        var date = document.getElementById('date').value;
+
+        document.getElementById('nameError').innerHTML = "";
+        document.getElementById('phnoError').innerHTML = "";
+        document.getElementById('emailError').innerHTML = "";
+        document.getElementById('dateError').innerHTML = "";
+
+        // Name validation
+        if (name.trim() === "") {
+            document.getElementById('nameError').innerHTML = "Please enter your name";
+            return false;
+        }
+
+        // Phone number validation
+        if (!/^\d{10}$/.test(phno)) {
+            document.getElementById('phnoError').innerHTML = "Please enter a valid 10-digit phone number";
+            return false;
+        }
+
+        // Email validation
+        if (!/\S+@\S+\.\S+/.test(email)) {
+            document.getElementById('emailError').innerHTML = "Please enter a valid email address";
+            return false;
+        }
+
+        // Date validation
+        if (date.trim() === "") {
+            document.getElementById('dateError').innerHTML = "Please select a date";
+            return false;
+        }
+
+        var selectedDate = new Date(date);
+        var currentDate = new Date();
+        currentDate.setHours(0, 0, 0, 0); 
+
+        if (selectedDate < currentDate) {
+            document.getElementById('dateError').innerHTML = "Please select today or a future date";
+            return false;
+        }
+
+        // Display success message
+        document.getElementById('successMessage').style.display = "block";
+        
+        // Redirect to success page after 3 seconds
+        setTimeout(function() {
+            window.location.href = "success.html";
+        }, 2000);
+
+        return false; 
+    }
+</script>-->
+
+
+</body>
+</html>
+
+
+
