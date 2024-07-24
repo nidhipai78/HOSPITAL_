@@ -1,0 +1,41 @@
+.entirequote {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  
+  .quote-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .quote {
+    position: relative;
+    max-width: 80%;
+  }
+  
+  .quotation-mark {
+    font-size: 6rem; 
+    color: #fc6a49; 
+    position: absolute;
+    top: -30px;  
+  }
+  
+  .left {
+    left: -60px; 
+  }
+  
+  .right {
+    right: -60px; 
+  }
+  
+  .quote p {
+    background-color: #f9f9f9; 
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  

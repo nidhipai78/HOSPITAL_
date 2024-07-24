@@ -1,0 +1,77 @@
+<!--<?php include("connection.php"); ?>
+
+<?php
+
+if(isset($_POST['submit'])) {
+    $name = $_POST['name'];
+    $password = $_POST['password'];
+    $confirm = $_POST['confirm'];
+    $email = $_POST['email'];
+
+    // Check if the user already exists
+    $check_query = "SELECT * FROM login WHERE email = '$email'";
+    $check_result = mysqli_query($conn, $check_query);
+
+    if(mysqli_num_rows($check_result) > 0) {
+        // User already exists, fetch details
+        $row = mysqli_fetch_assoc($check_result);
+        $user_name = $row['name'];
+        echo "<span style='font-size: 30px;'>Successfully logged in as '$user_name'</span>";
+    } else {
+        // New user, insert into database
+        $query = "INSERT INTO login (name, password, confirm, email) VALUES ('$name', '$password', '$confirm', '$email')";
+        $data = mysqli_query($conn, $query);
+
+        if($data) {
+            echo "<span style='font-size: 30px;'>Account created successfully for '$name'</span>";
+        } else {
+            echo "<span style='font-size: 30px;'>Account creation failed. Please try again.</span>";
+        }
+    }
+}
+
+?>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="login.css">
+    <style>
+        span {
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body style="background-color: rgb(222, 245, 245);">
+    <div class="login-container">
+        <form action="#" method="POST"  id="loginForm">
+            <h2>Login</h2>
+            <div class="form-group">
+                <input type="text" id="name" placeholder="Name" name="name" required>
+            </div>
+            <div class="form-group">
+                <input type="password" id="password" placeholder="Password" name="password"  required>
+            </div>
+            <div class="form-group">
+                <input type="password" id="confirmPassword" placeholder="Confirm Password"  name="confirm" required>
+            </div>
+            <div class="form-group">
+                <input type="email" id="email" placeholder="Email" name="email" required>
+            </div>
+            <!--<div class="form-group">
+                <a href="#" id="forgotPassword">Forgot Password?</a>
+            </div>-->
+            <input type="submit" value="Submit" name="submit" style="background-color:blue; width:80px;height:40px;border-radius: 5px; border: blue;">
+        </form>
+    </div>
+  
+    <br><br>
+    <span class="copyright">&copy; 2024 MedCare</span>
+</footer>
+
+<script src="login.js"></script>
+</body>
+</html>

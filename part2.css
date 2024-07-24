@@ -1,0 +1,413 @@
+/*DivBoxesSideBySide without space in between them*/
+/*.main{
+    display: flex;
+    justify-content: center;
+}
+.first{
+    height: 100px;
+    width: 300px;
+    background-color: blueviolet;
+}
+.second{
+    height: 100px;
+    width: 100px;
+    background-color: rgb(240, 101, 14);
+}
+.third{
+    height: 100px;
+    width: 100px;
+    background-color: red;
+}
+.fourth{
+    height: 100px;
+    width: 100px;
+    background-color: blueviolet;
+}*/
+
+
+/*Div boxes with space*/
+#container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+   
+
+}
+#container div{
+    height: 150px;
+    width: 400px;
+    background: #fc6a49;
+    border-radius: 5px;
+    margin: 60px;
+    text-align: center;
+
+}
+
+
+/*scroll bar for doctors*/
+.slider {
+    max-width: 800px;
+    margin: auto;
+    overflow: hidden;
+    white-space: nowrap; 
+    position: relative; 
+  }
+  
+  .slides {
+    display: inline-flex; 
+  }
+  
+  .slide {
+    width: calc(100% / 3);
+    text-align: center;
+    padding: 0 10px;
+  }
+  
+  .slide img {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 10px;
+    margin-left: 30px;
+    margin-right: 40px;
+  }
+  
+  .slide .name {
+    display: block;
+    color: #333;
+    font-size: 14px;
+  }
+  
+  .prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    z-index: 100;
+  }
+  
+  .prev {
+    left: 10px;
+  }
+  
+  .next {
+    right: 0px;
+  }
+
+
+
+/*Footer*/
+.containerfooter{
+    max-width: 1170px;
+    margin: auto;
+}
+.divrow{
+    display: flex;
+    flex-wrap: wrap;
+}
+ul{
+    list-style: none;
+}
+.footer{
+    background-color: #f97d61;
+    padding: 70px 0;
+}
+.footer-col{
+    width: 25%;
+    padding: 0 15px;
+}
+.footer-col h4{
+    font-size:20px ;
+    color: #044e38;
+   text-transform: capitalize;
+   margin-bottom: 35px;
+
+}
+.footer-col h4::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: #e7faf7;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
+
+.footer-col ul li:not(:last-child)
+{
+    margin-bottom: 10px;
+}
+.footer-col ul li a{
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 300;
+    color: #021715bb;
+    display: block;
+}
+
+
+/*Our Services*/
+.services{
+    display:grid;
+    gap:2rem;
+    grid-template-columns: repeat(auto-fit,minmax(10rem,1fr));
+  }
+  .services .pp{
+    background:#f97d61;
+    border-radius: 5rem;
+  border:1px dotted blue;
+  padding:2.4rem;
+  }
+
+.pp{
+  
+  padding: 20px; 
+  margin: 10px; 
+  border-radius: 10px; 
+  transition: background-color 0.3s;
+}
+
+
+.pp:hover {
+  background-color: #e63f1a; 
+}
+
+
+  .heading{
+    text-align: center;
+    padding-bottom: 2rem;
+    font-size:3rem;
+    color:black;
+    letter-spacing: .35em;
+  
+  
+  }
+  .btn{
+    display:inline-block;
+    margin-top:1rem;
+    padding:.5rem;
+    padding-left: 0.5rem;
+    border:2px dotted #044e38;
+  }
+  .footer-tab .copyright {
+    color: white;
+    margin-left: 25px;
+    
+  }
+
+
+/*Preloader*/
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+#preloader-video {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.hide {
+    display: none;
+}
+
+.content {
+    display: none; 
+}
+
+
+.hide .content {
+    display: block;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+ /*Div boxes with counting numbers*/
+.count-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px; 
+}
+.count-box {
+  width: 200px;
+  height: 150px; 
+  border: 2px solid #fc6a49;
+  background: #fc6a49;
+  display: flex;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0 20px; 
+}
+.spacer {
+  height: 100px; 
+}
+  
+
+/*First Slider*/
+.initial{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  /*box-sizing : border-box;*/
+}
+.scroll{
+  position: relative;
+  width: 60%;
+  overflow: hidden;
+}
+.images{
+  display: flex;
+  width: 100%;
+}
+.images img {
+  height: 400px; /* Keep the height the same */
+  width: 100%; /* Make the width 100% to fill the entire page */
+  transition: all 0.15s ease;
+}
+.images input{
+  display: none;
+
+}
+.dots{
+  display: flex;
+  justify-content: center;
+  margin: 5px;
+
+}
+.dots label{
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border: solid #fc6a49 3px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  margin:5px;
+
+}
+.dots label:hover{
+  background: #fc6a49;
+}
+#img1:checked ~ .m1{
+  margin-left: 0;
+}
+#img2:checked ~ .m2{
+  margin-left: -100%;
+}
+#img3:checked ~ .m3{
+  margin-left: -200%;}
+#img4:checked ~ .m4{
+  margin-left: -300%;
+}
+
+
+/*Awards*/
+.first{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  
+}
+.side{
+  position: relative;
+  width: 60%;
+  overflow: hidden;
+}
+.pics{
+  display: flex;
+  width: 100%;
+}
+.pics img {
+  height: 500px; 
+  width: 50%; 
+  transition: all 0.15s ease;
+}
+
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.quote-container {
+  margin: 20px 0; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quote {
+  position: relative;
+  max-width: 80%;
+}
+
+.quotation-mark {
+  font-size: 7rem; 
+  color: #fc6a49; 
+  position: absolute;
+  top: -30px; 
+}
+
+.left {
+  left: -60px; 
+}
+
+.right {
+  right: -60px; 
+}
+
+.quote p {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+.quote .citation {
+  margin-top: 10px; 
+  font-style: italic; 
+  text-align: center; 
+}
+
+
+
+
+

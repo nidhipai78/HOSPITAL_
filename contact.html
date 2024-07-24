@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+
+    <style>
+        .container{
+            background-color: #c3fde9;
+            width: 50%;
+            margin:  auto;
+            margin-top: 80px;
+            border-radius: 5px;
+        }
+        #name, #phone, #email {
+            width: 400px;
+            padding: 15px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            margin-left: 55px;
+            border-radius: 2px;
+        }
+        button[type="submit"] {
+            width: 432px;
+            padding: 15px;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            margin-left: 55px;
+            font-size: 20px;
+            background-color: #fc6a49;
+            border: #fc6a49;
+        }
+        label {
+            padding: 5px;
+            font-size: 20px;
+            margin-left: 55px;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-left: 55px;
+        }
+    </style>
+</head>
+<body style="background-color: #fff;">
+    <div class="container">
+        <form id="contactForm">
+            <fieldset>
+                <legend style="text-align: center; font-size: 30px;"><b>Contact Us</b></legend>
+                <label for="name">Enter your Name</label><br>
+                <input type="text" placeholder="Name" id="name"><br>
+                <div id="nameError" class="error"></div>
+                <label for="phone">Enter your Phone Number</label><br>
+                <input type="text" placeholder="Phone Number" name="phone" id="phone"><br>
+                <div id="phoneError" class="error"></div>
+                <label for="email">Enter your Email</label><br>
+                <input type="email" placeholder="Email" name="email" id="email"><br>
+                <div id="emailError" class="error"></div>
+                
+                    <!--<button type="submit">Send Message</button>-->
+
+                    <button type="submit">Contact</button><br>
+                  
+            </fieldset>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+       
+            document.getElementById('nameError').textContent = '';
+            document.getElementById('phoneError').textContent = '';
+            document.getElementById('emailError').textContent = '';
+
+         
+            const name = document.getElementById('name').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const email = document.getElementById('email').value.trim();
+
+            // Validate name
+            if (name === '') {
+                document.getElementById('nameError').textContent = 'Please enter your name.';
+            }
+
+            // Validate phone
+            if (phone === '') {
+                document.getElementById('phoneError').textContent = 'Please enter your phone number.';
+            } else if (!/^\d{10}$/.test(phone)) {
+                document.getElementById('phoneError').textContent = 'Please enter a valid 10-digit phone number.';
+            }
+
+            // Validate email
+            if (email === '') {
+                document.getElementById('emailError').textContent = 'Please enter your email address.';
+            } else if (!/^\S+@\S+\.\S+$/.test(email)) {
+                document.getElementById('emailError').textContent = 'Please enter a valid email address.';
+            }
+
+            
+            if (name !== '' && /^\d{10}$/.test(phone) && /^\S+@\S+\.\S+$/.test(email)) {
+                console.log('Name:', name);
+                console.log('Phone:', phone);
+                console.log('Email:', email);
+                setTimeout(function() {
+                    window.location.href = 'confirmation.html'; // Redirect to confirmation page
+                }, 2000); // Delay for 2 seconds
+            }
+        });
+    </script>
+</body>
+</html>

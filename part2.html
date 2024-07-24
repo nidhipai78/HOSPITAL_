@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Management System</title>
+    <link rel="stylesheet" href="part2.css">
+     <style >
+
+      /*NavBar*/
+      .navbar {
+  background-color: #f97d61;
+  padding-right: 15px;
+  padding-left: 15px;
+  width: 100%;
+  transition: transform 0.3s;
+}
+
+.navbar.compressed {
+  transform: translateY(-100%);
+}
+
+.navdiv {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navdiv .logo {
+  margin-right: 20px;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: inline-block;
+  margin-right: 25px;
+}
+
+li a {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+     </style>
+</head>
+<body >
+  
+  <div class="preloader">
+    <video autoplay muted loop id="preloader-video">
+        <source src="preloader.mp4" type="video/mp4">
+    </video>
+</div>
+<script src="preloader.js"></script>
+    <!--NavBar-->
+    
+    <nav class="navbar" id="navbar">
+      <div class="navdiv">
+        <div class="logo"><img src="logo.png" style="width: 300px; height: 200px;"></div>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About </a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </div>
+    </nav><br><br>
+    <script src="nav.js"></script>
+
+
+<!--Initial Images-->
+<h1 style="text-align: center; font-size: 50px; color: #f97d61;">Empowering Health, Inspiring Hope</h1><br>
+<!--<img src="image.png" alt="" style="width: 1000px; height: 500px; margin-left: 120px; margin-right: 20px; margin-top: 20px;"><br>-->
+
+<div class="initial">
+<div class="scroll">
+  <div class="images">
+      <input type="radio" name="slide" id="img1" checked>
+      <input type="radio" name="slide" id="img2">
+      <input type="radio" name="slide" id="img3">
+      <input type="radio" name="slide" id="img4">
+
+      <img src="doctors.png" class="m1" alt="img1">
+      <img src="mri.png" class="m2" alt="img2">
+      <img src="knee.png" class="m3" alt="img3">
+      <img src="image.png" class="m4" alt="img4">
+  </div>
+
+  <div class="dots">
+      <label for="img1"></label>
+      <label for="img2"></label>
+      <label for="img3"></label>
+      <label for="img4"></label>
+  </div>
+</div>
+</div>
+
+
+<!--Div boxes with counting numbers-->
+<div class="spacer"></div>
+
+<div class="count-container">
+  <div class="count-box" id="countBox1">
+    <div id="count1">0+</div>
+    <div style="text-align: center;">Doctors at Work</div>
+  </div>
+  
+  <div class="count-box" id="countBox2">
+    <div id="count2">0+</div>
+    <div style="text-align: center;">Satisfied Patients</div>
+  </div>
+
+  <div class="count-box" id="countBox3">
+    <div id="count3">0+</div>
+    <div style="text-align: center;">Bed Facility</div>
+  </div>
+
+  <div class="count-box" id="countBox4">
+    <div id="count4">0+</div>
+    <div style="text-align: center;">Available Hospitals</div>
+  </div>
+</div>
+<script src="count.js">
+  <div class="spacer"></div>
+</script>
+
+
+
+  <!--About Us-->
+  <h1 style="text-align: center; ">About Us</h1>
+<img src="https://i0.wp.com/www.orthospinenews.com/wp-content/uploads/2019/04/Hospital-building-12bto234rui.jpg?fit=790%2C559&ssl=1" alt="hospital"  style="margin-left: 200px;">
+<div class="neww" style=" margin-left: 100px; margin-right: 100px; margin-top: 20px; font-size: 20px;">
+<!--<p style="font-size: 20px; margin-left: 30px; margin-right: 30px; text-indent: 150px;">-->
+    In our Hospital, our mission is to provide comprehensive and compassionate care to our patients while optimizing operational efficiency for healthcare providers. With a focus on excellence in medical treatment, patient safety, and customer service, we strive to create a healing environment where every individual feels valued and respected.  </p>
+  </div>
+
+
+    <!--service section-->
+    <br><br>
+    <h1 class="heading" >Our Services</h1>
+    <section class="services" id="services">
+    
+      <div class="pp">
+        <h3>
+          Free Checkups
+        </h3><br><a href="ourservices.html" class="btn" style="text-decoration: none;">Learn more</a>
+      </div>
+      <div class="pp">
+        <h3>
+        24/7 Ambulance Facility
+        </h3><a href="ourservices.html" class="btn" style="text-decoration: none;">Learn more</a>
+      </div>
+      <div class="pp">
+        <h3>
+          Expert Doctors
+        </h3><br><a href="ourservices.html" class="btn" style="text-decoration: none;">Learn more</a>
+      </div>
+      <div class="pp">
+        <h3>
+          Pharmacy
+        </h3><br><br><a href="ourservices.html" class="btn" style="text-decoration: none;">Learn more</a>
+      </div>
+      <div class="pp">
+        <h3>
+          Bed Facility
+        </h3><br><br><a href="ourservices.html" class="btn" style="text-decoration: none;">Learn more</a>
+      </div>
+      <div class="pp">
+        <h3>
+       Total Care
+        </h3><br><br><a href="ourservices.html" class="btn" style="text-decoration: none;">Learn more</a>
+      </div><br><br><br>
+    </section>
+
+<!--Quote-->
+    <div class="quote-container">
+      <div class="quote">
+        <div class="quotation-mark left">&#8220;</div>
+        <p>I am very impressed with the care and services provided at this hospital. Thank you for making my treatment so much more comfortable</p>
+        <div class="quotation-mark right">&#8221;</div>
+        <p class="citation" ><b>- Eleanor Bennett</b></p> 
+      </div>
+    </div>
+
+
+<!--Awards and Accredition-->
+<h1 style="text-align: center;">Awards and Accredition</h1>
+<div class="first">
+  <div class="pics">
+        <!--<input type="radio" name="slide" id="img1" >
+        <input type="radio" name="slide" id="img2">
+        <input type="radio" name="slide" id="img3">
+        <input type="radio" name="slide" id="img4">-->
+  
+        <img src="award1.png" class="m1" alt="img1">
+        <img src="award2.png" class="m2" alt="img2">
+        <!--<img src="award3.png" class="m3" alt="img3">
+        <img src="award4.png" class="m4" alt="img4">-->
+    </div>
+  
+    
+    </div>
+  
+  <!--</div>-->
+
+
+<!--Doctors image-->
+<br><br>
+<h1 style="text-align: center; font-size: 40px; ">Meet Our Doctors</h1>
+<div class="slider" style="width: 1000px;">
+    <button class="prev" onclick="prevSlide()">&#10094;</button>
+    <div class="slides">
+      <div class="slide">
+        <img src="john.jpg" alt="John">
+        <span class="name" style="font-size: 20px;"> <b> Dr. John Smith</b> <br>Cardiologist</span>
+      </div>
+      <div class="slide">
+        <img src="sarah.jpg" alt="sarah">
+        <span class="name" style="font-size: 20px;"> <b> Dr. Sarah Johnson</b> <br>Cardiologist</span>
+      </div>
+      <div class="slide">
+        <img src="michael.jpg" alt="Michael">
+        <span class="name" style="font-size: 20px; margin-left: -25px;"> <b> Dr.Michael Williams</b> <br>Orthopedics</span>
+      </div>
+      <div class="slide">
+          <img src="emily.jpg" alt="emily">
+          <span class="name" style="font-size: 20px;"> <b> Dr. Emily Brown</b> <br>Orthopedics</span>
+        </div>
+        <div class="slide">
+          <img src="jenniffer.jpg" alt="jennifer">
+          <span class="name" style="font-size: 20px;"> <b> Dr. Jennifer Lee</b> <br>Neurology</span>
+        </div>
+        <div class="slide">
+          <img src="david.jpg" alt="david">
+          <span class="name" style="font-size: 20px;"> <b> Dr. David Jones</b> <br>Neurology</span>
+        </div>
+      
+    </div>
+    <button class="next" onclick="nextSlide()">&#10095;</button>
+  </div>
+  
+  
+  <script src="part2.js"></script>
+
+
+  <!--Footer-->
+  <br><br><br>
+  <footer class="footer">
+    <div class="containerfooter">
+        <div class="divrow">
+            <div class="footer-col">
+                <h4>QUICK LINKS</h4>
+                <ul>
+                    <li><a href="#">Home</a></li><br>
+                    <li><a href="contact.html">Contact</a></li><br>
+                    <li><a href="#">About</a></li><br>
+                    <li><a href="login.php">Login</a></li><br>
+                    
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>OUR SERVICES</h4>
+                <ul>
+                    <li><a href="ourservices.html">Free Checkups</a></li><br>
+                    <li><a href="ourservices.html">24/7 Ambulance Facility</a></li><br>
+                    <li><a href="ourservices.html">Expert Doctors</a></li><br>
+                    <li><a href="ourservices.html">Pharmacy</a></li><br>
+                    <li><a href="ourservices.html">Bed Facility</a></li><br>
+                    <li><a href="ourservices.html">Total Care</a></li><br>
+                </ul>
+            </div>
+            <div class="footer-col">
+              <h4>CONTACT INFORMATION</h4>
+              <ul>
+                  <li>Emergency: 0824 295 2315 </li><br>
+                  <li>Appointment: 9812345678</li>
+                  <li></li>
+              </ul>
+          </div>
+
+          <div class="footer-col">
+          <h4>FOLLOW US</h4>
+        <table><tr></tr>
+          <td><a href="www.facebook.com"><img src="https://www.pngmart.com/files/15/Circle-Facebook-Logo-PNG-Background-Image.png" alt="Facebook" style="width: 50px; height: 40px;"></a></td>
+          <td><a href="www.twitter.com"><img src="https://tse1.mm.bing.net/th?id=OIP.GvhQyyfMGA49XVPJ_uvG0gHaEK&pid=Api&rs=1&c=1&qlt=95&w=195&h=109" style="width: 50px; height: 40px;"></a></td>
+          <td><a href="www.instagram.com"><img src="https://www.pngall.com/wp-content/uploads/5/Instagram-Logo-PNG-Free-Download.png" style="width: 60px; height: 60px; margin-top: 5px;"></a></td>
+        </tr>
+        </table>
+      </div>
+            
+  
+        </div>
+    </div><br><br>
+    <span class="copyright">&copy; 2024 MedCare</span>
+  </footer>
+  </body>
+  </html>

@@ -1,4 +1,4 @@
-<?php include("connection.php"); ?>
+<!--<?php include("connection.php"); ?>
 
 <?php
 
@@ -24,7 +24,7 @@
       }
     }
 
-?>
+?>-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -101,7 +101,7 @@
 
 <div class="container">
     <h1>Book Appointment</h1>
-    <form id="appointmentForm" action="#" method="POST" >
+    <form id="appointmentForm" action="success.html" >
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" placeholder="Your Name">
         <div id="nameError" class="error"></div>
@@ -116,7 +116,7 @@
 
         <label for="date">Date:</label>
         <input type="date" id="date" name="date">
-       <!-- <div id="dateError" class="error"></div>-->
+        <div id="dateError" class="error"></div>
 
         <label for="department">Department:</label>
         <select id="department" name="department" onchange="populateDoctors(this.value)" required>
@@ -125,7 +125,7 @@
             <option value="Orthopedics">Orthopedics</option>
             <option value="Neurology">Neurology</option>
         </select>
-        <!--<div id="departmentError" class="error"></div>-->
+        <div id="departmentError" class="error"></div>
 
         <label for="doctor">Doctor:</label>
         <select id="doctor" name="doctor" required>
@@ -148,10 +148,10 @@
 <span class="copyright">&copy; 2024 MedCare</span>
 </footer>
 
-<!--<script>
+<script>
     function populateDoctors(selectedDepartment) {
         var doctorSelect = document.getElementById("doctor");
-        doctorSelect.innerHTML = ""; // Clear existing options
+        doctorSelect.innerHTML = ""; 
         
         if (selectedDepartment === "Cardiology") {
             addOption(doctorSelect, "Dr. John Smith");
@@ -246,7 +246,7 @@
 
         return false; 
     }
-</script>-->
+</script>
 
 
 </body>
